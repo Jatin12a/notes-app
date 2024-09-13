@@ -1,0 +1,42 @@
+<div class="container-fluid container-fluid-custom pb-5 mb-5">
+
+
+  <div class="row mb-5">
+    <div class="col">
+
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/dashboard">go back</a></li>
+          <li class="breadcrumb-item active"><%= note.title  %></li>
+        </ol>
+      </nav>
+      <div class="col d-flex justify-content-between align-item-center">
+        <h1 class="h3">view note</h1>
+        <form action="/dashboard/item-delete/<%= note._id %>?_method=DELETE" method="POST" class="position-relative">
+          <button type="submit" class="btn btn-primary">Delete Note</button>
+        </form>
+      </div>
+
+    </div>
+
+
+  </div>
+
+  <form action="/dashboard/item/<%= note._id %>?_method=PUT" method="post" class="position-relative" >
+    <div class="form-group mb-4 position-absolute">
+      <input type="text" class="form-control fw-bold border-0 fs-4" id="title" name="title" value="<%=note.title%>">
+    </div>
+    
+    <div class="form-group mb-4">
+      <textarea class="form-control pt-5 fs-4" id="body" name="body" placeholder="Take a note..." rows="12"><%= note.body %></textarea>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary btn-lg">Update</button>
+    </div>
+
+  </form>
+
+
+</div>
+

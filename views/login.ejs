@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>login</title>
+    <link rel='stylesheet' href='/css/signup.css' />
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <!--pinterest logo-->
+        <img src="https://media.licdn.com/dms/image/D560BAQEM6Oopil8nZQ/company-logo_200_200/0/1697579994711/watchnet_inc__logo?e=2147483647&v=beta&t=PYuJFUVhuLWaOymN5dbRh1smkOAQMVWMUYWOqkbZ3GI" alt="pin logo" class="img1" />
+        <p class="header">Login to see more</p>
+        
+       <% if (error.length > 0 ) { %>
+        <p class="error"><%=error%></p>
+        <% } %>
+        <form action="/login" method="post">
+          <input type="text" name="username" placeholder="username" class="detail" /><br />
+          <input type="password" name="password" placeholder="Password" class="detail" />
+          <input type="submit" class="btn int" value="Login">
+      </form>
+        <a href="/forgot">Forgot your password?</a>
+
+        <footer>
+          <p>
+            By continuing, you agree to Pinterest's
+            <b>Terms of Service, Privacy policy.</b>
+          </p>
+          <hr />
+          <a href="/signup">Not on Pinterest yet? Sign up</a>
+        </footer>
+      </div>
+    </div>
+
+  </body>
+</html>
